@@ -1,13 +1,15 @@
-# Mercado Libre Data Pipeline: Market Intelligence
+# Global E-commerce Data Pipeline: Market Intelligence
 
 ## About This Project
-This project is an End-to-End Data Pipeline designed to collect and analyze real e-commerce data using the Mercado Libre API. By performing rigorous data cleansing and wrangling on the extracted data, this pipeline transforms raw JSON responses into actionable business insights, enabling true market intelligence and trend analysis.
+This project is an End-to-End Data Pipeline designed to collect and analyze real e-commerce data using a RESTful API (Fake Store API). By performing rigorous data cleansing and wrangling on the extracted data, this pipeline transforms raw JSON responses into actionable business insights, enabling true market intelligence and trend analysis.
+
+**Note:** The architecture is designed to be highly adaptable, allowing quick pivots between different data sources if API security policies change.
 
 ### Technologies Used
 
   * **Python:** For scripting and API requests.
   * **Pandas:** For data cleaning, structuring, and transformation.
-  * **Mercado Libre API:** As the primary data source (JSON format).
+  * **REST API:** As the primary data source (handling JSON responses and status codes).
   * **Git & GitHub:** For version control and portfolio showcase.
 
 ### Future Enhancements
