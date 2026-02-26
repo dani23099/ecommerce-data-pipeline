@@ -12,18 +12,20 @@ if response.status_code == 200:
     datos_json = response.json()
 
 
-    df = pd.DataFrame(datos_json)
+    df = pd.json_normalize(datos_json)
 
-    # 3. Clean and structure the columns for database
-    df_limpio = df[['id', 'title', 'price', 'category']]
+# 3. Clean and structure the columns for database
+    df_limpio = df[['id', 'title', 'price', 'category', 'rating.rate', 'rating.count']]
     df_limpio = df_limpio.rename(columns={
         'id': 'product_id',
         'title': 'product_name',
         'price': 'current_price',
-        'category': 'product_category'
+        'category': 'product_category',
+        'rating.rate': 'customer_rating',
+        'rating.count': 'review_count'
     })
 
-    # 4.Save the table in CSV format
+# 4.Save the table in CSV format
     df_limpio.to_csv("ecommerce_data.csv", index=False)
     print("\nEcommerce_data.csv file is ready to be analyzed.")
 
