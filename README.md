@@ -21,10 +21,20 @@ Going beyond basic data extraction, this pipeline features an automated **Risk a
 
 This feature demonstrates the ability to translate raw JSON data into tangible, profit-oriented recommendations.
 
+### 📊 Visual Data Storytelling
+
+![Market Intelligence Matrix](market_matrix.png)
+
+**Key Executive Insights:**
+* **Core Inventory:** The majority of the catalog focuses on affordable, high-volume items.
+* **Marketing Targets:** Identified 4 highly-rated (4.5+ stars), low-cost items (primarily Clothing and Electronics) with massive review volumes. These are prime candidates for customer acquisition campaigns.
+* **The "Cash Cow":** A mid-priced Jewelry item shows exceptionally high engagement and satisfaction, acting as a stable revenue generator.
+* **Risk Mitigation:** Flagged the most expensive electronic item as a high-risk asset due to poor ratings and low sales velocity, recommending a supplier review.
+
 ### Future Enhancements
 Currently, this project uses Pandas for data transformation, which is the perfect tool for the current volume of data extracted from the API. However, to demonstrate scalability and modern data engineering practices, I plan to migrate the pipeline to the following technologies in the future:
 
-  * **Polars:** To replace Pandas and achieve much faster, multi-           threaded data processing.
+  * **Polars:** To replace Pandas and achieve much faster, multi- threaded data processing.
 
   * **DuckDB:** To execute rapid analytical SQL queries locally without heavy server installations.
 
