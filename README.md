@@ -31,6 +31,18 @@ This feature demonstrates the ability to translate raw JSON data into tangible, 
 * **The "Cash Cow":** A mid-priced Jewelry item shows exceptionally high engagement and satisfaction, acting as a stable revenue generator.
 * **Risk Mitigation:** Flagged the most expensive electronic item as a high-risk asset due to poor ratings and low sales velocity, recommending a supplier review.
 
+## 🤖 Orchestration & Automation (ETL)
+
+To ensure data is consistently up-to-date without manual intervention, this project implements a fully automated ETL pipeline.
+
+* **Master Orchestrator (`main.py`):** A Python script utilizing the `subprocess` module to execute the Extract, Transform, Visualize, and Load phases strictly in sequence. It includes built-in fail-safe logic to halt execution and prevent data corruption if any external dependency (like the API) fails.
+* **Database Integration:** Securely loads the cleaned, business-ready data into a local **MariaDB** database using `SQLAlchemy`. The architecture respects strict SQL schemas and protects sensitive credentials via environment variables (`.env`).
+* **Linux Automation:** The entire pipeline is scheduled using **Arch Linux Cron**, executing silently in the background via a dedicated Anaconda Python environment to manage dependencies efficiently.
+
+![ETL Automation Success](cron_automation.png)
+
+*Screenshot: The automated Cron Job successfully executing the master orchestrator and writing to the system log.*
+
 ### Future Enhancements
 Currently, this project uses Pandas for data transformation, which is the perfect tool for the current volume of data extracted from the API. However, to demonstrate scalability and modern data engineering practices, I plan to migrate the pipeline to the following technologies in the future:
 
